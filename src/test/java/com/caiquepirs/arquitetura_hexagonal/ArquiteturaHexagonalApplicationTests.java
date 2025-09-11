@@ -1,4 +1,4 @@
-package com.hexagonal.arquitetura_hexagonal;
+package com.caiquepirs.arquitetura_hexagonal;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

@@ -1,4 +1,4 @@
-package com.hexagonal.arquitetura_hexagonal;
+package com.caiquepirs.arquitetura_hexagonal;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
