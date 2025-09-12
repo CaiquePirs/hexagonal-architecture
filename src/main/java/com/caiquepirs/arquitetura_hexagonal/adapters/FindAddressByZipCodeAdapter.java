@@ -4,12 +4,12 @@ import com.caiquepirs.arquitetura_hexagonal.adapters.out.client.FindAddressByZip
 import com.caiquepirs.arquitetura_hexagonal.adapters.out.client.mapper.AddressResponseMapper;
 import com.caiquepirs.arquitetura_hexagonal.adapters.out.client.response.AddressResponse;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Address;
-import com.caiquepirs.arquitetura_hexagonal.application.ports.out.FindAddressByZipCodeOutPort;
+import com.caiquepirs.arquitetura_hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FindAddressByZipCodeAdapter implements FindAddressByZipCodeOutPort {
+public class FindAddressByZipCodeAdapter implements FindAddressByZipCodeOutputPort {
 
     @Autowired
     private FindAddressByZipCodeClient findAddressByZipCodeClient;

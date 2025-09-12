@@ -1,8 +1,7 @@
 package com.caiquepirs.arquitetura_hexagonal.adapters.out;
 
-import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.CustomerEntityMapper;
+import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.mapper.CustomerEntityMapper;
 import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.CustomerRepository;
-import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.entity.CustomerEntity;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.UpdateCustomerOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,8 +16,10 @@ public class UpdateCustomerAdapter implements UpdateCustomerOutputPort {
     @Autowired
     private CustomerEntityMapper customerEntityMapper;
 
+    @Override
     public void update(Customer customer) {
-        CustomerEntity customerEntity = customerEntityMapper.toEntity(customer);
+        var customerEntity = customerEntityMapper.toEntity(customer);
         customerRepository.save(customerEntity);
     }
+
 }

@@ -1,6 +1,6 @@
 package com.caiquepirs.arquitetura_hexagonal.adapters.out;
 
-import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.CustomerEntityMapper;
+import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.mapper.CustomerEntityMapper;
 import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.CustomerRepository;
 import com.caiquepirs.arquitetura_hexagonal.adapters.out.repository.entity.CustomerEntity;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
