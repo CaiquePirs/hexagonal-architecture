@@ -4,8 +4,9 @@ import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request.Cust
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request.CustomerRequest;
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.response.CustomerResponse;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
-import com.caiquepirs.arquitetura_hexagonal.application.ports.FindCustomerByIdInputPort;
+import com.caiquepirs.arquitetura_hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.in.CustomerUseCaseInputPort;
+import com.caiquepirs.arquitetura_hexagonal.application.ports.in.UpdateCustomerInputPort;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -20,6 +21,9 @@ public class CustomerController {
 
     @Autowired
     private FindCustomerByIdInputPort findCustomerByIdInputPort;
+
+    @Autowired
+    private UpdateCustomerInputPort updateCustomerInputPort;
 
     @Autowired
     private CustomerMapper customerMapper;
@@ -37,5 +41,14 @@ public class CustomerController {
         return ResponseEntity.ok(customerMapper.toResponse(customer));
     }
 
+
+    @PutMapping("/{id}")
+    public ResponseEntity<Void> update(@PathVariable String id,
+                                       @RequestBody @Valid CustomerRequest request){
+        Customer customer = customerMapper.toEntity(request);
+        customer.setId(id);
+        updateCustomerInputPort.update(customer, request.getZipCode());
+        return ResponseEntity.noContent().build();
+    }
 
 }

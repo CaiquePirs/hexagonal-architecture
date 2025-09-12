@@ -1,7 +1,7 @@
 package com.caiquepirs.arquitetura_hexagonal.application.core.usecases;
 
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
-import com.caiquepirs.arquitetura_hexagonal.application.ports.FindCustomerByIdInputPort;
+import com.caiquepirs.arquitetura_hexagonal.application.ports.in.FindCustomerByIdInputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.FindCustomerByIdOutputPort;
 
 public class FindCustomerByIdUseCase implements FindCustomerByIdInputPort {
