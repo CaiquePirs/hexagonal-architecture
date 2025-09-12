@@ -7,7 +7,6 @@ import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.FindCustomerByIdOutputPort;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-
 import java.util.Optional;
 
 @Component
