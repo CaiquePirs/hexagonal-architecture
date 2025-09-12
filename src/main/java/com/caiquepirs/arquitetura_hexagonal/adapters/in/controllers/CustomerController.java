@@ -3,7 +3,6 @@ package com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers;
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request.CustomerMapper;
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request.CustomerRequest;
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.response.CustomerResponse;
-import com.caiquepirs.arquitetura_hexagonal.adapters.out.DeleteCustomerUseCase;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.in.DeleteCustomerInputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.in.FindCustomerByIdInputPort;
