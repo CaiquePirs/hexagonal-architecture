@@ -1,6 +1,7 @@
 package com.caiquepirs.arquitetura_hexagonal.config;
 
 import com.caiquepirs.arquitetura_hexagonal.adapters.FindAddressByZipCodeAdapter;
+import com.caiquepirs.arquitetura_hexagonal.adapters.SendCpfValidationPortAdapter;
 import com.caiquepirs.arquitetura_hexagonal.adapters.out.InsertCustomersAdapter;
 import com.caiquepirs.arquitetura_hexagonal.application.core.usecases.InsertCustomerUseCase;
 import org.springframework.context.annotation.Bean;
@@ -12,9 +13,14 @@ public class InsertCustomerConfig {
     @Bean
     public InsertCustomerUseCase insertCustomerUseCase(
             FindAddressByZipCodeAdapter findAddressByZipCodeAdapter,
-            InsertCustomersAdapter insertCustomersAdapter){
+            InsertCustomersAdapter insertCustomersAdapter,
+            SendCpfValidationPortAdapter sendCpfValidationPortAdapter){
 
-        return new InsertCustomerUseCase(findAddressByZipCodeAdapter, insertCustomersAdapter);
+        return new InsertCustomerUseCase(
+                findAddressByZipCodeAdapter,
+                insertCustomersAdapter,
+                sendCpfValidationPortAdapter
+        );
     }
 
 }

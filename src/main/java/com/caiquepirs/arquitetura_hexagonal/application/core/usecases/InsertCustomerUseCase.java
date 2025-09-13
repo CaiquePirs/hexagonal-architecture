@@ -5,16 +5,20 @@ import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.in.CustomerUseCaseInputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.InsertCustomerOutputPort;
+import com.caiquepirs.arquitetura_hexagonal.application.ports.out.SendCpfValidationOutputPort;
 
 public class InsertCustomerUseCase implements CustomerUseCaseInputPort {
 
     private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
     private final InsertCustomerOutputPort insertCustomerOutputPort;
+    private final SendCpfValidationOutputPort sendCpfValidationOutputPort;
 
     public InsertCustomerUseCase(FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort,
-                                 InsertCustomerOutputPort insertCustomerOutputPort){
+                                 InsertCustomerOutputPort insertCustomerOutputPort,
+                                 SendCpfValidationOutputPort sendCpfValidationOutputPort){
         this.findAddressByZipCodeOutputPort = findAddressByZipCodeOutputPort;
         this.insertCustomerOutputPort = insertCustomerOutputPort;
+        this.sendCpfValidationOutputPort = sendCpfValidationOutputPort;
     }
 
     public void insert(Customer customer, String zipCode){
@@ -22,6 +26,7 @@ public class InsertCustomerUseCase implements CustomerUseCaseInputPort {
         customer.setAddress(address);
 
         insertCustomerOutputPort.insert(customer);
+        sendCpfValidationOutputPort.send(customer.getCpf());
     }
 
 
