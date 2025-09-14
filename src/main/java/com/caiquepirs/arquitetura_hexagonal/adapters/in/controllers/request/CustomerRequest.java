@@ -10,7 +10,7 @@ public class CustomerRequest {
     private String cpf;
 
     @NotBlank(message = "Name is required")
-    private String nome;
+    private String name;
 
     @NotBlank(message = "ZipCode is required")
     private String zipCode;
