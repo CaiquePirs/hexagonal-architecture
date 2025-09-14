@@ -1,5 +1,6 @@
-package com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request;
+package com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.mapper;
 
+import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request.CustomerRequest;
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.response.CustomerResponse;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
 import org.mapstruct.Mapper;

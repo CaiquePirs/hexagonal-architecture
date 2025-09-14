@@ -2,12 +2,12 @@ package com.caiquepirs.arquitetura_hexagonal.application.core.usecases;
 
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Address;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
-import com.caiquepirs.arquitetura_hexagonal.application.ports.in.CustomerUseCaseInputPort;
+import com.caiquepirs.arquitetura_hexagonal.application.ports.in.InsertCustomerInputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.FindAddressByZipCodeOutputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.InsertCustomerOutputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.out.SendCpfValidationOutputPort;
 
-public class InsertCustomerUseCase implements CustomerUseCaseInputPort {
+public class InsertCustomerUseCase implements InsertCustomerInputPort {
 
     private final FindAddressByZipCodeOutputPort findAddressByZipCodeOutputPort;
     private final InsertCustomerOutputPort insertCustomerOutputPort;

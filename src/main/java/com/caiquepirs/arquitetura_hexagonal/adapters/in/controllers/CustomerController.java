@@ -1,12 +1,12 @@
 package com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers;
 
-import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request.CustomerMapper;
+import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.mapper.CustomerMapper;
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.request.CustomerRequest;
 import com.caiquepirs.arquitetura_hexagonal.adapters.in.controllers.response.CustomerResponse;
 import com.caiquepirs.arquitetura_hexagonal.application.core.domain.Customer;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.in.DeleteCustomerInputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.in.FindCustomerByIdInputPort;
-import com.caiquepirs.arquitetura_hexagonal.application.ports.in.CustomerUseCaseInputPort;
+import com.caiquepirs.arquitetura_hexagonal.application.ports.in.InsertCustomerInputPort;
 import com.caiquepirs.arquitetura_hexagonal.application.ports.in.UpdateCustomerInputPort;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.*;
 public class CustomerController {
 
     @Autowired
-    private CustomerUseCaseInputPort CustomerUseCaseInputPort;
+    private InsertCustomerInputPort InsertCustomerInputPort;
 
     @Autowired
     private FindCustomerByIdInputPort findCustomerByIdInputPort;
@@ -35,7 +35,7 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<Void> insert(@RequestBody @Valid CustomerRequest request){
         Customer customer = customerMapper.toEntity(request);
-        CustomerUseCaseInputPort.insert(customer, request.getZipCode());
+        InsertCustomerInputPort.insert(customer, request.getZipCode());
         return ResponseEntity.ok().build();
     }
 
