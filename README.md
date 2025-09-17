@@ -1,6 +1,6 @@
 # 🧱 Arquitetura Hexagonal com Java, Spring Boot, MongoDB e Kafka
 
-Este projeto foi desenvolvido como parte do curso **"Aprenda na prática como aplicar a arquitetura hexagonal em microsserviços"** da Udemy, com foco em aplicar os conceitos de arquitetura limpa, separação de responsabilidades e comunicação entre camadas por meio de portas e adaptadores.
+Este projeto foi desenvolvido como parte de um exercicio passado em um curso da Udemy, com foco em aplicar os conceitos de arquitetura limpa, separação de responsabilidades e comunicação entre camadas por meio de portas e adaptadores.
 
 ## 🚀 Objetivo
 
